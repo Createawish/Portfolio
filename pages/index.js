@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
         <NavBar/>
         <Main/>
-        <About/>
+        <About data={data}/>
         <Skills data={data}/>
 
     </div>
