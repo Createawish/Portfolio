@@ -4,6 +4,7 @@ import Main from "../components/Main";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import {data} from '/data';
+import Projects from "../components/Projects/Projects";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Main/>
         <About data={data}/>
         <Skills data={data}/>
+        <Projects data ={data}/>
 
     </div>
   )

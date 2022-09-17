@@ -7,8 +7,8 @@ const About = ({data}) => {
                 <div className='col-span-2'>
                 <p className='uppercase text-xl tracking-widest text-[#5651e5]'>{data.about.header}</p>
                     <h2 className='py-4'>{data.about.title}</h2>
-                    <p className='py-2 text-gray-600'>{data.about.discription1}</p>
-                    <p className='py-2 text-gray-600 '>{data.about.discription2}</p>
+                    <p className='py-2 text-gray-600'>{data.about.description1}</p>
+                    <p className='py-2 text-gray-600 '>{data.about.description2}</p>
                     <p className='py-2 text-gray-600 underline cursor-pointer'>{data.about.link}</p>
                 </div>
                 <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
