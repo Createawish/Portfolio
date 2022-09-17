@@ -1,12 +1,11 @@
 import React from 'react'
-import {items} from './NavBarItemHidden';
 import Link from "next/link";
 
-const NavBarItem = () => {
+const NavBarItem = ({data}) => {
     return (
         <>
-            {items.map((item,i) =>  <Link href='/' key={i}>
-                <li className='ml-10 text-sm uppercase hover:border-b'>{item}</li>
+            {data.nav.map((item) =>  <Link href={item.link} key={item.id}>
+                <li className='ml-10 text-sm uppercase hover:border-b'>{item.name}</li>
             </Link>)}
         </>
     );

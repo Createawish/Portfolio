@@ -3,13 +3,13 @@ import Link from "next/link";
 
 
 
-export const items = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+// export const items = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
-const NavBarItemHidden = () => {
+const NavBarItemHidden = ({data}) => {
     return (
         <>
-            {items.map((item, i) => <Link href='/' key={i}>
-                <li className='py-4 text-sm'>{item}</li>
+            {data.nav.map((item) => <Link href={item.link} key={item.id}>
+                <li className='py-4 text-sm'>{item.name}</li>
             </Link>)}
         </>
     );

@@ -5,9 +5,10 @@ import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 import Social from "../Social";
 import NavBarItemHidden from "./NavBarItemHidden";
 import NavBarItem from "./NavBarItem";
+import Link from "next/link";
 
 
-const NavBar = () => {
+const NavBar = ({data}) => {
     const [nav, setNav] = useState(false);
     const [shadow, setShadow] = useState(false);
     const handleClose = () =>{
@@ -30,10 +31,12 @@ const NavBar = () => {
     return (
             <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20  z-[100]'}>
                 <div className='flex justify-between items-center w-full px-2 2xl:px-16'>
+                    <Link href='/'>
                 <Image src={LOGO} alt='Logo' width='125'height='50'/>
+                    </Link>
                 <div>
                     <ul className='hidden md:flex'>
-                     <NavBarItem/>
+                     <NavBarItem data={data}/>
                     </ul>
                     <div className='md:hidden' onClick={handleClose}>
                         <AiOutlineMenu size={25}/>
