@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar/NavBar";
 import Main from "../components/Main";
 import About from "../components/About";
 import Skills from "../components/Skills";
+import {data} from '/data';
 
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
         <NavBar/>
         <Main/>
         <About/>
-        <Skills/>
+        <Skills data={data}/>
 
     </div>
   )
