@@ -63,7 +63,7 @@ const NavBar = ({data}) => {
                         </div>
                             <div className='py-4 flex flex-col'>
                                 <ul className='uppercase'>
-                                 <NavBarItemHidden/>
+                                 <NavBarItemHidden nav={nav} setNav={setNav}/>
                                 </ul>
                                 <div className='pt-40'>
                                     <p className='uppercase tracking-widest text-[#5651e5]'>Let's Connect</p>
