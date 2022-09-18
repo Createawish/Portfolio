@@ -31,12 +31,12 @@ const NavBar = ({data}) => {
     return (
             <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20  z-[100]'}>
                 <div className='flex justify-between items-center w-full px-2 2xl:px-16'>
-                    <Link href='/'>
-                <Image src={LOGO} alt='Logo' width='125'height='50'/>
+                    <Link href='/#home'>
+                <Image src={LOGO} alt='Logo' width='75'height='30'/>
                     </Link>
                 <div>
                     <ul className='hidden md:flex'>
-                     <NavBarItem data={data}/>
+                     <NavBarItem/>
                     </ul>
                     <div className='md:hidden' onClick={handleClose}>
                         <AiOutlineMenu size={25}/>
@@ -74,8 +74,6 @@ const NavBar = ({data}) => {
                             </div>
                     </div>
                 </div>
-
-
             </div>
 
     );

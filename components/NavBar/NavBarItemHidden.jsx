@@ -5,12 +5,24 @@ import Link from "next/link";
 
 // export const items = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
-const NavBarItemHidden = ({data}) => {
+const NavBarItemHidden = () => {
     return (
         <>
-            {data.nav.map((item) => <Link href={item.link} key={item.id}>
-                <li className='py-4 text-sm'>{item.name}</li>
-            </Link>)}
+            <Link href='/home'>
+                <li className='py-4 text-sm'>Home</li>
+            </Link>
+            <Link href='/about'>
+                <li className='py-4 text-sm'>About</li>
+            </Link>
+            <Link href='/#skills'>
+                <li className='py-4 text-sm'>Skills</li>
+            </Link>
+            <Link href='/#projects'>
+                <li className='py-4 text-sm'>Projects</li>
+            </Link>
+            <Link href='/#contact'>
+                <li className='py-4 text-sm'>Contacts</li>
+            </Link>
         </>
     );
 };
