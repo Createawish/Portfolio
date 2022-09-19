@@ -4,12 +4,7 @@ import {AiOutlineMail} from "react-icons/ai";
 import {MdOutlineDownload} from 'react-icons/md';
 import Link from "next/link";
 
-
 const Social = () => {
-    // const {download} =
-    //     useDownloader();
-    // const fileUrl = {Resume};
-    // const filename = "Resume";
     return (
         <>
             <a
@@ -34,10 +29,13 @@ const Social = () => {
             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration'>
                 <AiOutlineMail/>
             </div>
+
             </Link>
+            <a href="../public/assets/doc/cv_valeria_bezlydova.pdf" download>
             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration'>
                 <MdOutlineDownload/>
             </div>
+            </a>
         </>
     );
 };

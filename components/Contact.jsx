@@ -71,7 +71,7 @@ console.log(query)
                 </div>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Phone Number</label>
-                    <input name='number' required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='number'/>
+                    <input name='number' required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='tel' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
                 </div>
             </div>
             <div className='flex flex-col py-2'>
@@ -83,8 +83,8 @@ console.log(query)
                 <input  name='subject' required value={query.subject} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
             </div>
             <div className='flex flex-col py-2'>
-                <label className='uppercase text-sm py-2'>Massage</label>
-               <textarea name='massage' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
+                <label className='uppercase text-sm py-2'>Message</label>
+               <textarea name='massage' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'/>
             </div>
             <button type='submit' className='w-full p-4 text-gray-100 mt-4'>Send Message</button>
         </form>
@@ -99,7 +99,7 @@ console.log(query)
                     </Link>
                 </div>
             </div>
-            
+
         </div>
     );
 };
