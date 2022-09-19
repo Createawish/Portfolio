@@ -27,8 +27,8 @@ const Netflix = () => {
                         I use Firestore which is cloud storage with Firebase to save data.
                         The front-end is styled with Tailwind CSS - an incredible CSS framework to save time styling apps.
                         At the end of the build I deployed this app with Firebase hosting.</p>
-                    <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
-                    <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+                    <Link href='https://clone-netflix-8d612.web.app/'><button className='px-8 py-2 mt-4 mr-8'>Demo</button></Link>
+                    <Link href='https://github.com/Createawish/Clone-Netflix/tree/dev'><button className='px-8 py-2 mt-4 mr-8'>Code</button></Link>
                 </div>
                 <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>
                     <div className='p-2'>
