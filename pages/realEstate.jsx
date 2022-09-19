@@ -26,8 +26,8 @@ const RealEstate = () => {
                     I built this project using CSS grid for the main layout of
                     our site as well as the CSS order property to display our images
                     in the order we desire.</p>
-                    <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
-                    <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+                    <Link href= 'https://real-estate-app-pi-silk.vercel.app/'><button className='px-8 py-2 mt-4 mr-8'>Demo</button></Link>
+                    <Link href='https://github.com/Createawish/RealEstate-app'><button className='px-8 py-2 mt-4 mr-8'>Code</button></Link>
                 </div>
                 <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>
                     <div className='p-2'>

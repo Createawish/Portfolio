@@ -1,9 +1,38 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Social from "./Social";
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi';
 import Link from "next/link";
+import Image from "next/image";
+import contactImg from '../public/assets/contact.jpg';
 
 const Contact = () => {
+    const [query, setQuery] = useState({
+
+    });
+
+    // Update inputs value
+    const handleParam = () => (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setQuery((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+    // Form Submit function
+    const formSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        Object.entries(query).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
+        fetch("https://getform.io/f/3481b0ee-178f-4bca-9889-9f0877b37973", {
+            method: "POST",
+            body: formData
+        }).then(() => setQuery({ name: query.name , email: query.email , message: query.message ,number: query.number,  subject: query.subject}));
+    };
+
+console.log(query)
     return (
         <div id='contact' className='w-full lg:h-screen'>
             <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
@@ -14,10 +43,10 @@ const Contact = () => {
 <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
 <div className='lg:p-4 h-full'>
     <div>
-        <img className='rounded-xl hover:scale-105 ease-in duration-300' src='https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80' alt='/'/>
+        <Image className='rounded-xl hover:scale-105 ease-in duration-300' src={contactImg} alt='/'/>
     </div>
     <div>
-        <h2 className='py-2'>Name here</h2>
+        <h2 className='py-2'>Valeria</h2>
         <p>Front-End Developer</p>
         <p className='py-4'>I am available for freelance or full-time positions. Contact me and let's talk.</p>
     </div>
@@ -33,28 +62,28 @@ const Contact = () => {
                     {/*right*/}
 <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
     <div className='p-4'>
-        <form>
+        <form onClick={formSubmit} >
             <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Name</label>
-                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
+                    <input required value={query.name} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
                 </div>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Phone Number</label>
-                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='number'/>
+                    <input required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='number'/>
                 </div>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Email</label>
-                <input className='border-2 rounded-lg p-3 flex border-gray-300' type='email'/>
+                <input required value={query.email} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='email'/>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Subject</label>
-                <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
+                <input required value={query.subject} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Massage</label>
-               <textarea className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
+               <textarea required value={query.message} onChange={handleParam} className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
             </div>
             <button className='w-full p-4 text-gray-100 mt-4'>Send Message</button>
         </form>

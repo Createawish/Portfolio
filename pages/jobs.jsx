@@ -22,8 +22,8 @@ const Jobs = () => {
                     <h2>Overbiew</h2>
                     <p> In this project, I used React , Redux Toolkit to filter jobs by selected categories.
                         Frontend Mentor provided a local JSON file to practice working with JSON data.</p>
-                    <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
-                    <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+                    <Link href='https://redux-dashboard-app.vercel.app/'><button className='px-8 py-2 mt-4 mr-8'>Demo</button></Link>
+                    <Link href='https://github.com/Createawish/Redux-Dashboard'><button className='px-8 py-2 mt-4 mr-8'>Code</button></Link>
                 </div>
                 <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>
                     <div className='p-2'>
