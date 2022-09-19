@@ -6,11 +6,33 @@ import Social from "../Social";
 import NavBarItemHidden from "./NavBarItemHidden";
 import NavBarItem from "./NavBarItem";
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 
-const NavBar = ({data}) => {
+const NavBar = () => {
     const [nav, setNav] = useState(false);
     const [shadow, setShadow] = useState(false);
+    const [navBg, setNavBg] = useState('#ecf0f3');
+    const [linkColor, setLinkColor] = useState('#1f2937');
+    const router = useRouter()
+
+    useEffect(() => {
+        if(
+            router.asPath === '/netflix' ||
+            router.asPath === '/counties' ||
+            router.asPath === '/jobs' ||
+            router.asPath === '/real' ||
+            router.asPath === '/weather'
+        ) {
+            setNavBg('transparent')
+            setLinkColor('#ecf0f3')
+        } else {
+            setNavBg('#ecf0f3')
+            setLinkColor('#1f2937')
+        }
+    },[router])
+
+
     const handleClose = () =>{
         setNav(!nav)
     }
@@ -29,13 +51,15 @@ const NavBar = ({data}) => {
 
 
     return (
-            <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20  z-[100]'}>
-                <div className='flex justify-between items-center w-full px-2 2xl:px-16'>
+            <div style={{backgroundColor: `${navBg}`}}
+                className={shadow ? 'fixed w-full h-10 shadow-xl z-[100]' : 'fixed w-full h-10  z-[100]'}>
+                <div className='flex justify-between items-center w-full px-2 py-1 2xl:px-16'>
                     <Link href='/#home'>
                 <Image src={LOGO} alt='Logo' width='75'height='30'/>
                     </Link>
                 <div>
-                    <ul className='hidden md:flex'>
+                    <ul style={{color: `${linkColor}`}}
+                        className='hidden md:flex'>
                      <NavBarItem/>
                     </ul>
                     <div className='md:hidden' onClick={handleClose}>

@@ -1,4 +1,6 @@
 import React from 'react'
+import meImg from '../public/assets/main/IMG_9819.jpg'
+import Image from "next/image";
 
 const About = ({data}) => {
     return (
@@ -12,7 +14,7 @@ const About = ({data}) => {
                     <p className='py-2 text-gray-600 underline cursor-pointer'>{data.about.link}</p>
                 </div>
                 <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
-                    <img className='rounded-xl' src='https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='About'/>
+                    <Image className='rounded-xl' src={meImg} alt='About'/>
                 </div>
             </div>
         </div>
