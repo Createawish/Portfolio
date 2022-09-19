@@ -29,7 +29,7 @@ const Contact = () => {
         fetch("https://getform.io/f/3481b0ee-178f-4bca-9889-9f0877b37973", {
             method: "POST",
             body: formData
-        }).then(() => setQuery({ name: query.name , email: query.email , message: query.message ,number: query.number,  subject: query.subject}));
+        }).then(() => setQuery({ name: "", email: "" , massage:"" ,number: "",  subject: ""}));
     };
 
 console.log(query)
@@ -66,24 +66,25 @@ console.log(query)
             <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Name</label>
-                    <input required value={query.name} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
+                    <input required name='name'
+                           value={query.name} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
                 </div>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Phone Number</label>
-                    <input required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='number'/>
+                    <input name='number' required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='number'/>
                 </div>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Email</label>
-                <input required value={query.email} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='email'/>
+                <input name='email' required value={query.email} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='email'/>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Subject</label>
-                <input required value={query.subject} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
+                <input  name='subject' required value={query.subject} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='text'/>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Massage</label>
-               <textarea required value={query.message} onChange={handleParam} className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
+               <textarea name='massage' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
             </div>
             <button className='w-full p-4 text-gray-100 mt-4'>Send Message</button>
         </form>
