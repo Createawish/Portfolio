@@ -71,7 +71,7 @@ console.log(query)
                 </div>
                 <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Phone Number</label>
-                    <input name='number' required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='tel' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
+                    <input name='number' required value={query.number} onChange={handleParam()} className='border-2 rounded-lg p-3 flex border-gray-300' type='tel'/>
                 </div>
             </div>
             <div className='flex flex-col py-2'>
