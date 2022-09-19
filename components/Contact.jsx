@@ -1,13 +1,16 @@
 import React,{useState} from 'react';
-import Social from "./Social";
+import { ToastContainer, toast } from 'react-toastify';
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi';
+import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
 import Image from "next/image";
+import Social from "./Social";
 import contactImg from '../public/assets/contact.jpg';
+
+
 
 const Contact = () => {
     const [query, setQuery] = useState({
-
     });
 
     // Update inputs value
@@ -29,10 +32,33 @@ const Contact = () => {
         fetch("https://getform.io/f/3481b0ee-178f-4bca-9889-9f0877b37973", {
             method: "POST",
             body: formData
-        }).then(() => setQuery({ name: "", email: "" , massage:"" ,number: "",  subject: ""}));
+        }).then((res)=>{
+            if(res.status === 200) {
+                toast.success('Thanks for you message!', {
+                    position: "top-right",
+                    autoClose: 3500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            }
+        }).catch((err)=>{
+            console.error("err", err)
+            toast.error('Oops... Something went wrong!', {
+                position: "top-right",
+                autoClose: 3500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        })
+            .finally(() => setQuery({ name: "", email: "" , message:"" ,number: "",  subject: ""}));
     };
 
-console.log(query)
     return (
         <div id='contact' className='w-full lg:h-screen'>
             <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
@@ -84,7 +110,7 @@ console.log(query)
             </div>
             <div className='flex flex-col py-2'>
                 <label className='uppercase text-sm py-2'>Message</label>
-               <textarea name='massage' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'/>
+               <textarea name='message' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'/>
             </div>
             <button type='submit' className='w-full p-4 text-gray-100 mt-4'>Send Message</button>
         </form>
@@ -99,7 +125,16 @@ console.log(query)
                     </Link>
                 </div>
             </div>
-
+            <ToastContainer
+                position="top-right"
+                autoClose={3500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover />
         </div>
     );
 };
