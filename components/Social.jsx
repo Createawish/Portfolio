@@ -31,7 +31,7 @@ const Social = () => {
             </div>
 
             </Link>
-            <a href="../public/assets/doc/cv_valeria_bezlydova.pdf" download>
+            <a href="../public/assets/doc/CV-Valeria-Borodko.pdf" download>
             <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration'>
                 <MdOutlineDownload/>
             </div>

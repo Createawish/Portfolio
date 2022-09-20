@@ -25,7 +25,7 @@ const Countries = () => {
                         light and dark site theme has been implemented. The API was implemented using Axios .
                         The project is based on searching and filtering countries (se arch for a country using an input field, filter countries by region).
                         I used React -router-dom to navigate the site.</p>
-                    <link href='https://redux-countries-app.vercel.app/'><button className='px-8 py-2 mt-4 mr-8'>Demo</button></link>
+                    <Link href='https://redux-countries-app.vercel.app/'><button className='px-8 py-2 mt-4 mr-8'>Demo</button></Link>
                     <Link href='https://github.com/Createawish/Redux-Countries-App'><button className='px-8 py-2 mt-4 mr-8'>Code</button></Link>
                 </div>
                 <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>

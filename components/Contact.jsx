@@ -112,7 +112,7 @@ const Contact = () => {
                 <label className='uppercase text-sm py-2'>Message</label>
                <textarea name='message' required value={query.message} onChange={handleParam()} className='border-2 rounded-lg p-3 border-gray-300' rows='10'/>
             </div>
-            <button type='submit' className='w-full p-4 text-gray-600 mt-4'>Send Message</button>
+            <button className='w-full p-4 text-gray-600 mt-4' type='submit'>Send Message</button>
         </form>
     </div>
 </div>
