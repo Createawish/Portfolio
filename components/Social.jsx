@@ -8,7 +8,7 @@ const Social = () => {
     return (
         <>
             <a
-                href='https://www.linkedin.com/in/clint-briley-50056920a/'
+                href='www.linkedin.com/in/valeriaborodko'
                 target='_blank'
                 rel='noreferrer'
             >
